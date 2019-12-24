@@ -1,0 +1,52 @@
+$main-blue-color: #0099da;
+$main-black-color: #1d1f20;
+$main-gray-color: #808890;
+
+.icon-location {
+    width: 25px;
+    height: 25px;
+    fill: $main-gray-color;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+
+    &-Image {
+        width: 100%;
+    }
+
+    &-Model {
+        color: $main-blue-color;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    &-Price {
+        color: $main-black-color;
+        font-weight: bold;
+    }
+}
+
+.Features {
+    font-size: 12px;
+    color: $main-gray-color;
+
+    &-List {
+        
+    }
+
+    &-Other {
+        color: $main-blue-color;
+    }
+}
+
+.Dealer {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: $main-blue-color;
+}
