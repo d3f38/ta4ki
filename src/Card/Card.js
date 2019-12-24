@@ -5,7 +5,7 @@ import './Card.scss';
 
 function Card(props) {
     
-    console.log('props', props)
+    // console.log('props', props)
 
 
 	const  formatPrice = (price) => {
@@ -15,7 +15,7 @@ function Card(props) {
     }
     
 	return (
-        <div className='Card'>
+        <div className='Card' key={props.id}>
             <img src={props.images[0]} className='Card-Image' alt='Polo'></img>
             <p className='Card-Model'>{props.model_name}</p>
             <p className='Card-Price'>{formatPrice(props.price)} ₽</p>
