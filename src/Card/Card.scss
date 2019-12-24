@@ -8,12 +8,24 @@ $main-gray-color: #808890;
     fill: $main-gray-color;
 }
 
+.Catalogue {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
 .Card {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 24%;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
 
     &-Image {
         width: 100%;
@@ -36,7 +48,7 @@ $main-gray-color: #808890;
     color: $main-gray-color;
 
     &-List {
-        
+        padding-left: 20px;
     }
 
     &-Other {
