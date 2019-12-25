@@ -11,6 +11,7 @@ $main-gray-color: #808890;
 .Catalogue {
     display: flex;
     flex-wrap: wrap;
+
     justify-content: space-around;
 
 }
@@ -26,6 +27,18 @@ $main-gray-color: #808890;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 20px;
+
+    @media (max-width: 1200px)  {
+        width: 31%;
+    }
+
+    @media (max-width: 867px)  {
+        width: 48%;
+    }
+
+    @media (max-width: 500px)  {
+        width: 100%;
+    }
 
     &-Image {
         width: 100%;
