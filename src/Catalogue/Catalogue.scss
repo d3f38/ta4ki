@@ -1,0 +1,38 @@
+.Catalogue {
+    width: 100%;
+    padding: 0 30px 0;
+    background-color: #f3f5f6;
+}
+
+.CatalogueCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Sorting {
+    width: 100%;
+    display: flex;
+    padding: 20px 0;
+    color: #808890;
+
+    &-Label {
+        display: flex;
+        align-items: center;
+    }
+
+    &-Radio {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #000;
+        border-radius: 50%;
+        margin-right: 10px;
+        margin-left: 25px;
+        background-color: #FFF;
+        box-sizing: border-box;
+    }
+
+    &-Input:checked + &-Label &-Radio {
+        border: 5px solid #0099da;
+    }
+}

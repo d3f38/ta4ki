@@ -3,22 +3,19 @@ $main-black-color: #1d1f20;
 $main-gray-color: #808890;
 
 .icon-location {
-    width: 25px;
-    height: 25px;
+    position: relative;
+    right: 5px;
+    width: 20px;
+    height: 20px;
     fill: $main-gray-color;
 }
 
-.Catalogue {
-    display: flex;
-    flex-wrap: wrap;
 
-    justify-content: space-around;
-
-}
 
 .Card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 24%;
     margin-bottom: 20px;
     background-color: #FFFFFF;
@@ -26,7 +23,7 @@ $main-gray-color: #808890;
     text-align: left;
     box-sizing: border-box;
     border-radius: 10px;
-    padding: 20px;
+
 
     @media (max-width: 1200px)  {
         width: 31%;
@@ -40,6 +37,12 @@ $main-gray-color: #808890;
         width: 100%;
     }
 
+    &-AutoInfo {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px 10px;
+    }
+
     &-Image {
         width: 100%;
     }
@@ -48,11 +51,14 @@ $main-gray-color: #808890;
         color: $main-blue-color;
         font-size: 1rem;
         font-weight: bold;
+        margin: 0 0 5px;
+        text-decoration: none;
     }
 
     &-Price {
         color: $main-black-color;
         font-weight: bold;
+        margin: 0 0 10px;
     }
 }
 
@@ -60,12 +66,20 @@ $main-gray-color: #808890;
     font-size: 12px;
     color: $main-gray-color;
 
+    &-Title {
+        margin: 0;
+    }
+
     &-List {
         padding-left: 20px;
+        margin-bottom: 5px;
+        line-height: 1.5;
     }
 
     &-Other {
         color: $main-blue-color;
+        margin: 5px 0 10px;
+        text-decoration: none;
     }
 }
 
@@ -73,5 +87,21 @@ $main-gray-color: #808890;
     display: flex;
     align-items: center;
     font-size: 12px;
-    color: $main-blue-color;
+    padding: 5px 20px 15px;
+    border-top: 1px solid $main-gray-color;
+    
+    &-IconLocation {
+        position: relative;
+        top: 5px;
+    }
+
+    &-Link {
+        text-decoration: none;
+        color: $main-blue-color;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    
 }

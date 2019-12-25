@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import Main from './Main/Main'
+import Catalogue from './Catalogue/Catalogue'
 
 function App() {
 
-
 	return (
 		<div className="App">
-			<Main/>
+			<Catalogue/>
 		</div>
 	);
 }
