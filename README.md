@@ -2,13 +2,13 @@
 
 ## Установка
 
-### `npm install`
+`npm install`
 
 ## Запуск
 
-### `npm start`
+`npm start`
 
-Приложение запустится в браузере по адресу [http: // localhost: 3000] (http: // localhost: 3000) .
+Приложение запустится в браузере по адресу http: // localhost: 3000.
 
 ## О проекте
 
