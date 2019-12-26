@@ -1,15 +1,15 @@
 import React from 'react';
 import './Card.scss';
-import { calculateDistance } from './../utils';
-
+import { calculateDistance, makeCounter } from './../utils';
 
 function Card(props) {
 
+    const keyCounter = makeCounter();
     const dealerLocation = { 
         latitude: props.dealer.latitude,
         longitude: props.dealer.longitude
     }
-    const initLocation = {'latitude': 55.7536232, 'longitude': 37.6199775};
+    const initLocation = {latitude: 55.7536232, longitude: 37.6199775};
 	const  formatPrice = (price) => {
 		const formatter = new Intl.NumberFormat("ru");
 
@@ -19,9 +19,10 @@ function Card(props) {
         const resultItems = [];
         for (let i = 0; i < showingItems; i++) {
             const element = list[i];
+
             if (element) {
-                resultItems.push(<li className='Features-Item'>{element}</li>)
-            } else resultItems.push(<br></br>)
+                resultItems.push(<li className='Features-Item' key={keyCounter()}>{element}</li>)
+            } else resultItems.push(<br key={keyCounter()}></br>)
         }
 
         return resultItems;
@@ -33,9 +34,7 @@ function Card(props) {
     const amountFeaturesShow = showFeatures(props.features, amountItems).length;
     const amountAllFeatures = props.features.length;
     const totalFeatures= amountAllFeatures - amountFeaturesShow;
-    const textContentFeature = totalFeatures > 0 ? 
-        `ещё ${totalFeatures} особенностей` : <br></br>;
-
+    const textContentFeature = totalFeatures > 0 ? `ещё ${totalFeatures} особенностей` : <br key={keyCounter()}></br>;
     
 	return (
         <div className='Card' key={props.id}>
@@ -45,7 +44,7 @@ function Card(props) {
                 <p className='Card-Price'>{formatPrice(props.price)} ₽</p>
                 <div className='Features'>
                     <p className='Features-Title'>Особенности:</p>
-                    <ul className='Features-List'>
+                    <ul className='Features-List' >
                         {showFeatures(props.features, 3)}
                     </ul>
                     <a href='#features' className='Features-Other'>{textContentFeature}</a>
@@ -53,7 +52,7 @@ function Card(props) {
             </div>
             
             <div className='Dealer'>
-                <a href='#asd' className='Dealer-Link'>
+                <a href={props.dealer.url} className='Dealer-Link'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" className='icon-location Dealer-IconLocation'>
                         <g fillRule="evenodd">
                             <path d="M249.1,82c54.4,0,113.1,33.7,114.9,124.2c0,78.4-88.8,175.8-109.7,198.5c-1.7,1.8-6.9,1.8-8.7,0

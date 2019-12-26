@@ -1,6 +1,7 @@
 .Catalogue {
     width: 100%;
-    padding: 0 30px 0;
+    padding: 0 30px;
+    box-sizing: border-box;
     background-color: #f3f5f6;
 }
 
@@ -16,9 +17,15 @@
     padding: 20px 0;
     color: #808890;
 
+    @media (max-width: 375px)  {
+        font-size: 14px;
+        flex-direction: column;
+    }
+
     &-Label {
         display: flex;
         align-items: center;
+        white-space: nowrap;;
     }
 
     &-Radio {
@@ -30,6 +37,10 @@
         margin-left: 25px;
         background-color: #FFF;
         box-sizing: border-box;
+
+        @media (max-width: 375px)  {
+            margin-left: 0;
+        }
     }
 
     &-Input:checked + &-Label &-Radio {

@@ -5,7 +5,6 @@ import './../Card/Card.scss';
 import './Catalogue.scss';
 import { calculateDistance } from './../utils.js';
 
-
 class Catalogue extends Component {
     state = {
         data: cars,
@@ -47,8 +46,6 @@ class Catalogue extends Component {
         })
     }
 
-    // handlerSortDealersByDistance = () => this.sortDealersByDistance(this.state);
-
     sortDealersByPrice = () => {
         const sortedData = this.state.data.sort((a,b) => {
             if (parseInt(a.price) > parseInt(b.price)) {
@@ -73,14 +70,14 @@ class Catalogue extends Component {
                 <div className='Sorting'>
                     <span className='Sorting-Title'>Сортировать</span>
                     <div className='Sorting-Price'>
-                        <input type='radio' className='Sorting-Input' onChange={this.sortDealersByPrice} id='sorting-price' name='sorting' checked hidden></input>
+                        <input type='radio' className='Sorting-Input' onChange={this.sortDealersByPrice} id='sorting-price' name='sorting' checked={this.state.sorting === 'price'} hidden></input>
                         <label className='Sorting-Label'htmlFor='sorting-price'>
                             <div className='Sorting-Radio'></div>
                             <span className='Sorting-Type'>По цене</span>
                         </label>
                     </div>
                     <div className='Sorting-Distance'>
-                        <input type='radio' className='Sorting-Input' onChange={this.sortDealersByDistance} id='sorting-distance' name='sorting' hidden></input>
+                        <input type='radio' className='Sorting-Input' onChange={this.sortDealersByDistance} id='sorting-distance' name='sorting' checked={this.state.sorting === 'distance'} hidden></input>
                         <label className='Sorting-Label' htmlFor='sorting-distance'>
                             <div className='Sorting-Radio'></div>
                             <span className='Sorting-Type'>По удаленности</span>
